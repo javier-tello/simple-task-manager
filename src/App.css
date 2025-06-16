@@ -1,38 +1,192 @@
-.App {
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
   text-align: center;
+  color: #333;
+  margin-bottom: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.task-form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.form-group {
+  margin-bottom: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.task-management {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px;
+}
+
+.sidebar {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+}
+
+.task-filter, .task-stats {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.filter-button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.filter-button.active {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}
+
+.task-list {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.task-item.completed {
+  opacity: 0.7;
+}
+
+.task-item.completed h3 {
+  text-decoration: line-through;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 10px;
+}
+
+.priority-badge {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.priority-Low {
+  background-color: #4caf50;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.priority-Medium {
+  background-color: #ff9800;
+}
+
+.priority-High {
+  background-color: #f44336;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button.delete {
+  background-color: #f44336;
+}
+
+button.delete:hover {
+  background-color: #d32f2f;
+}
+
+button.complete {
+  background-color: #2196f3;
+}
+
+button.complete:hover {
+  background-color: #0b7dda;
+}
+
+button.uncomplete {
+  background-color: #ff9800;
+}
+
+button.uncomplete:hover {
+  background-color: #e68a00;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-top: 5px;
 }
